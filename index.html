@@ -3,91 +3,147 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Houssam Harwash, PMP® | CM® — Project Management & Marketing, Mississauga</title>
-<meta name="description" content="Houssam Harwash, PMP® | CM®, is a project management and marketing professional in Mississauga, Canada. Five years in projects and planning in Saudi oil and gas, high honours graduate of Sheridan College, co-founder of Harwash Inc in Toronto.">
+<title>Houssam Harwash | PMP® | CM® | Project Management and Marketing, Toronto</title>
+<meta name="description" content="Houssam Harwash, PMP® | CM®. Project management and marketing professional in Toronto, Canada. Connecting creative vision with precision execution.">
 <style>
-  :root { --ink:#16202b; --accent:#8a6d2f; --soft:#f5f1e8; --line:#e3ddd0; }
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family: Georgia, 'Times New Roman', serif; color:var(--ink); background:#fff; line-height:1.65; }
-  .wrap { max-width: 860px; margin: 0 auto; padding: 0 22px; }
-  header { text-align:center; padding: 56px 0 8px; }
-  header img { width:190px; height:190px; object-fit:cover; border-radius:50%; border:4px solid var(--soft); }
-  h1 { font-size: 2.3rem; margin-top: 22px; letter-spacing:.2px; }
-  .cred { color:var(--accent); font-size:1.05rem; margin-top:4px; }
-  .tag { font-style: italic; color:#44505c; margin-top:10px; }
-  section { padding: 34px 0 6px; border-top:1px solid var(--line); margin-top:34px; }
-  h2 { font-size:1.35rem; margin-bottom:12px; }
-  p { margin-bottom: 12px; }
-  .cols { display:flex; gap:26px; flex-wrap:wrap; align-items:flex-start; }
-  .cols img { width:300px; max-width:100%; border-radius:10px; }
-  .cols .txt { flex:1; min-width:260px; }
-  ul { margin: 0 0 12px 20px; }
-  li { margin-bottom: 6px; }
-  .cards { display:flex; gap:14px; flex-wrap:wrap; }
-  .card { background:var(--soft); border-radius:10px; padding:16px 18px; flex:1; min-width:220px; }
-  .card b { display:block; margin-bottom:4px; }
-  footer { text-align:center; padding: 44px 0 54px; color:#44505c; font-size:.95rem; }
-  a { color: var(--accent); }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: #000;
+    color: #f5f5f7;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-align: center;
+  }
+  section {
+    padding: 120px 24px;
+    max-width: 980px;
+    margin: 0 auto;
+  }
+  .hero { padding-top: 140px; }
+  .hero img {
+    width: 220px; height: 220px; object-fit: cover;
+    border-radius: 50%;
+    display: block; margin: 0 auto 48px;
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+  h1 {
+    font-size: clamp(3rem, 10vw, 6.5rem);
+    font-weight: 700; letter-spacing: -0.02em; line-height: 1.02;
+  }
+  .creds {
+    margin-top: 28px;
+    font-size: clamp(1.2rem, 3.4vw, 1.9rem);
+    font-weight: 600; color: #a1a1a6;
+  }
+  .tagline {
+    margin: 34px auto 0; max-width: 720px;
+    font-size: clamp(1.5rem, 4.6vw, 2.6rem);
+    font-weight: 700; line-height: 1.2;
+    background: linear-gradient(90deg, #ff3b30, #bf5af2);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .loc { margin-top: 26px; font-size: 1.05rem; color: #86868b; letter-spacing: 0.14em; text-transform: uppercase; }
+  h2 {
+    font-size: clamp(2.2rem, 6.5vw, 4rem);
+    font-weight: 700; letter-spacing: -0.02em; line-height: 1.08;
+    margin-bottom: 30px;
+  }
+  p {
+    font-size: clamp(1.1rem, 2.6vw, 1.45rem);
+    line-height: 1.55; color: #d6d6da;
+    max-width: 760px; margin: 0 auto 22px;
+  }
+  p strong { color: #fff; }
+  .divider { width: 64px; height: 2px; margin: 0 auto; background: linear-gradient(90deg, #ff3b30, #bf5af2); border: none; }
+  .photo {
+    width: min(440px, 86vw); border-radius: 24px;
+    display: block; margin: 44px auto 0;
+  }
+  ul.credlist { list-style: none; max-width: 720px; margin: 0 auto; text-align: center; }
+  ul.credlist li {
+    font-size: clamp(1.05rem, 2.5vw, 1.35rem); color: #d6d6da;
+    padding: 18px 10px; border-bottom: 1px solid rgba(255,255,255,0.12);
+  }
+  ul.credlist li:last-child { border-bottom: none; }
+  .big {
+    font-size: clamp(1.7rem, 5.2vw, 3rem);
+    font-weight: 700; line-height: 1.25; color: #fff;
+    max-width: 820px; margin: 0 auto;
+  }
+  a { color: #2997ff; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  footer { padding: 70px 24px 90px; color: #86868b; font-size: 0.95rem; }
+  .reveal { opacity: 0; transform: translateY(36px); transition: opacity 0.9s ease, transform 0.9s ease; }
+  .reveal.in { opacity: 1; transform: none; }
 </style>
 </head>
 <body>
-<div class="wrap">
 
-<header>
+<section class="hero reveal">
   <img src="headshot-suit.jpg" alt="Houssam Harwash">
   <h1>Houssam Harwash</h1>
-  <div class="cred">PMP® | CM® — Project Management &amp; Marketing</div>
-  <div class="tag">Damascus to Khobar to Toronto. Projects, planning, marketing, and starting over properly.</div>
-</header>
-
-<section>
-  <h2>About</h2>
-  <div class="cols">
-    <div class="txt">
-      <p>Houssam Harwash, PMP® | CM®, is a project management and marketing professional based in Mississauga, Ontario, with a career that spans three countries and two industries.</p>
-      <p>He began in Syria, earning a Bachelor's Degree in Economics from Damascus University. In Canada he rebuilt on credentials: an Advanced Diploma in Business Administration from Sheridan College with High Honours, the PMP® certification, the Chartered Marketer designation, and an Ontario real estate licence. In 2019 he co-founded Harwash Inc in Toronto with his brother Osama, where he leads operations, marketing, and business development.</p>
-      <p>Today his professional focus is project management, operations, and marketing, with a standing commitment to humanitarian and community work.</p>
-    </div>
-    <img src="blazer-skyline.jpg" alt="Houssam Harwash in Toronto">
-  </div>
+  <div class="creds">PMP® | Chartered Marketer (CM®)</div>
+  <div class="tagline">Connecting creative vision with precision execution.</div>
+  <div class="loc">Toronto, ON</div>
 </section>
 
-<section>
-  <h2>The road here</h2>
-  <div class="cards">
-    <div class="card"><b>Syria</b>Economics graduate, Damascus University. He stood in the first protests against the Assad regime in Salihiya, Midan, and Douma, and lost friends to it. During the first years of the war, before leaving in 2012, he privately coordinated relief for displaced families: housing placement, food and medical aid, funded by private donors.</div>
-    <div class="card"><b>Saudi Arabia</b>Projects and Planning Division Manager at Abrican for Oil and Gas Services, Khobar, 2013 to 2018. Projects, tenders, and purchase orders through Saudi Aramco systems, and a Letter of Appreciation from Aramco's South Ghawar Maintenance Services Division.</div>
-    <div class="card"><b>Canada</b>Sheridan College Advanced Diploma in Business Administration, High Honours (3.93 GPA), first place in a strategic business simulation ranked in the Global Top 50. PMP®, Chartered Marketer (CM®), licensed Ontario realtor, and co-founder of a Toronto business rated 4.9 stars across 900+ Google reviews.</div>
-  </div>
+<hr class="divider">
+
+<section class="reveal">
+  <h2>Project management. Marketing. Delivery.</h2>
+  <p>Houssam Harwash is a project management and marketing professional based in <strong>Toronto, Canada</strong>. His career spans three countries and two industries, and one rule runs through all of it: plan it properly, then execute it precisely.</p>
+  <p>Today his focus is project management, operations, and marketing, with a standing commitment to humanitarian work.</p>
 </section>
 
-<section>
+<section class="reveal">
+  <h2>It started with helping people.</h2>
+  <p>He studied economics at Damascus University. When the war displaced families around him, he organized help himself: finding homes for families with nowhere to go, and getting food and medical aid to them, funded by private people who trusted him to deliver it.</p>
+  <p>Supporting people in their hardest moments is not a chapter in his story. It is the story. It is the same drive he brings to humanitarian work today, wherever in the world it is needed.</p>
+</section>
+
+<section class="reveal">
+  <h2>Saudi Arabia. Aramco country.</h2>
+  <p>From 2013 to 2018 he was Projects and Planning Division Manager at Abrican for Oil and Gas Services in Khobar, running projects, tenders, and purchase orders on <strong>Saudi Aramco</strong> contracts around Dhahran, through Aramco's own systems.</p>
+  <p>His work earned a Letter of Appreciation from Aramco's South Ghawar Maintenance Services Division.</p>
+</section>
+
+<section class="reveal">
+  <h2>Canada. Built on credentials.</h2>
+  <p>Advanced Diploma in Business Administration from Sheridan College, High Honour Graduate with a 3.93 GPA, and a first place finish in a strategic business simulation ranked in the Global Top 50.</p>
+  <p>PMP®. Chartered Marketer. Licensed Ontario realtor. And in 2019, co-founder of Harwash Inc in Toronto with his brother Osama, a business rated 4.9 stars across more than 900 Google reviews, where he leads operations, marketing, and business development.</p>
+  <img class="photo" src="blazer-skyline.jpg" alt="Houssam Harwash in Toronto">
+</section>
+
+<section class="reveal">
+  <p class="big">A father of three.<br>Everything he builds, he builds for them.</p>
+</section>
+
+<section class="reveal">
   <h2>Credentials</h2>
-  <ul>
-    <li>PMP® — Project Management Professional, PMI</li>
-    <li>CM® — Chartered Marketer, Canadian Marketing Association</li>
-    <li>Advanced Diploma in Business Administration, Sheridan College — High Honour Graduate, 3.93 GPA</li>
+  <ul class="credlist">
+    <li>PMP®, Project Management Professional, PMI</li>
+    <li>CM®, Chartered Marketer, Canadian Marketing Association</li>
+    <li>Advanced Diploma in Business Administration, Sheridan College, High Honour Graduate, 3.93 GPA</li>
     <li>Bachelor's Degree in Economics, Damascus University</li>
-    <li>Real Estate Licence, Humber College — licensed Ontario realtor</li>
+    <li>Real Estate Licence, Humber College, licensed Ontario realtor</li>
     <li>Letter of Appreciation, Saudi Aramco, South Ghawar Maintenance Services Division</li>
   </ul>
-  <div class="cols">
-    <img src="graduation.jpg" alt="Houssam Harwash at his Sheridan College graduation">
-    <img src="library.webp" alt="Houssam Harwash reading in a library">
-  </div>
 </section>
 
-<section>
-  <h2>Research &amp; marketing work</h2>
+<section class="reveal">
+  <h2>Research Work</h2>
   <p>His Sheridan portfolio includes an original TikTok usage study with survey research and Looker Studio dashboards, brand and campaign case analyses (Syncapse, Shaw Media, Anheuser-Busch, Uber vs Taxi), a full marketing plan, a B2B digital marketing campaign, and agency pitch work.</p>
   <p><a href="https://drive.google.com/drive/folders/13Qb-6L6ilye2OXwsmFaCPuDExT5mIRgX">View the research portfolio</a></p>
 </section>
 
 <footer>
-  Houssam Harwash, PMP® | CM® · Mississauga, Ontario, Canada<br>
-  Contact: <a href="mailto:harwash95@gmail.com">harwash95@gmail.com</a>
+  Houssam Harwash, PMP® | CM® · Toronto, ON · <a href="mailto:harwash95@gmail.com">harwash95@gmail.com</a>
 </footer>
 
-</div>
+<script>
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); }), { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
 </body>
 </html>
