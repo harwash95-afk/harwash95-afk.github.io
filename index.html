@@ -206,7 +206,7 @@
 <section class="rv up">
   <h2>The Record</h2>
   <div class="stats">
-    <div class="stat"><div class="top"><span class="label">Years of professional experience</span><span class="num" data-count="13" data-suffix="+">0</span></div><div class="bar"><i data-w="95"></i></div></div>
+    <div class="stat"><div class="top"><span class="label">Years of professional experience</span><span class="num" id="yearsNum" data-count="13" data-suffix="+">0</span></div><div class="bar"><i data-w="95"></i></div></div>
     <div class="stat"><div class="top"><span class="label">Years in Saudi oil and gas</span><span class="num" data-count="5">0</span></div><div class="bar"><i data-w="55"></i></div></div>
     <div class="stat"><div class="top"><span class="label">Sheridan College GPA</span><span class="num" data-count="3.93" data-dec="2">0</span></div><div class="bar"><i data-w="98"></i></div></div>
     <div class="stat"><div class="top"><span class="label">Countries worked in</span><span class="num" data-count="3">0</span></div><div class="bar"><i data-w="60"></i></div></div>
@@ -242,6 +242,14 @@
 <script>
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); }), { threshold: 0.08 });
   document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+  const yearsNum = document.getElementById('yearsNum');
+  if (yearsNum) {
+    const start = new Date(2013, 9, 1), now = new Date();
+    let yrs = now.getFullYear() - start.getFullYear();
+    if (now < new Date(now.getFullYear(), start.getMonth(), start.getDate())) yrs--;
+    yearsNum.dataset.count = yrs;
+  }
 
   const statIO = new IntersectionObserver(es => es.forEach(e => {
     if (!e.isIntersecting) return;
