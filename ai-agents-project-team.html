@@ -27,6 +27,9 @@
   .byline { font-size: 0.95rem; color: #86868b; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 12px; }
   .scene { width: min(620px, 100%); margin: 40px auto 8px; }
   .scene svg { width: 100%; height: auto; display: block; }
+  .scenewrap { margin: 44px auto 10px; }
+  .scenewrap .scene { margin: 0 auto; }
+  .scenecap { text-align: center; color: #86868b; font-size: 0.98rem; margin-top: 12px; }
   article p { font-size: clamp(1.08rem, 2.5vw, 1.3rem); line-height: 1.72; color: #d6d6da; margin: 0 0 24px; }
   article h3 { font-size: clamp(1.35rem, 3.6vw, 1.8rem); font-weight: 700; color: #fff; margin: 46px 0 18px; }
   .sign { font-style: italic; color: #a1a1a6; margin-top: 40px; }
@@ -82,6 +85,24 @@
     <p>And still, things slip through. A permit delay sat unnoticed in an inbox for three weeks and cost a project two weeks of schedule. Nobody was lazy. The system was broken.</p>
     <p>So the decision was made: deploy a crew of AI agents to do the chasing. Not one chatbot. A crew, each agent with one job, coordinated like a small team.</p>
 
+    <div class="scenewrap"><div class="scene" role="img" aria-label="Sketch: email inbox, three trackers and meeting notes all flowing into one Friday report that takes 18 hours to build">
+    <svg viewBox="0 0 900 330" xmlns="http://www.w3.org/2000/svg" font-family="inherit">
+    <rect x="30" y="20" width="200" height="64" rx="12" fill="#101012" stroke="rgba(255,255,255,0.45)" stroke-width="1.5" stroke-dasharray="6 4"/><text x="130" y="59" text-anchor="middle" fill="#f5f5f7" font-size="17" font-weight="700">EMAIL INBOX</text>
+    <rect x="30" y="125" width="200" height="64" rx="12" fill="#101012" stroke="rgba(255,255,255,0.45)" stroke-width="1.5" stroke-dasharray="6 4"/><text x="130" y="164" text-anchor="middle" fill="#f5f5f7" font-size="17" font-weight="700">3 TRACKERS</text>
+    <rect x="30" y="230" width="200" height="64" rx="12" fill="#101012" stroke="rgba(255,255,255,0.45)" stroke-width="1.5" stroke-dasharray="6 4"/><text x="130" y="269" text-anchor="middle" fill="#f5f5f7" font-size="17" font-weight="700">MEETING NOTES</text>
+    <path id="w1" d="M230 52 C 400 52, 480 115, 632 128" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" stroke-dasharray="5 5"/>
+    <path id="w2" d="M230 157 L632 157" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" stroke-dasharray="5 5"/>
+    <path id="w3" d="M230 262 C 400 262, 480 200, 632 186" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" stroke-dasharray="5 5"/>
+    <rect x="648" y="52" width="220" height="190" rx="12" fill="#161618" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+    <rect x="640" y="44" width="220" height="190" rx="12" fill="#101012" stroke="rgba(255,255,255,0.55)" stroke-width="1.5"/>
+    <text x="750" y="105" text-anchor="middle" fill="#f5f5f7" font-size="18" font-weight="700">THE FRIDAY</text><text x="750" y="132" text-anchor="middle" fill="#f5f5f7" font-size="18" font-weight="700">REPORT</text>
+    <circle cx="750" cy="180" r="24" fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="1.5"/><path d="M750 180 L750 166 M750 180 L760 186" stroke="#f5f5f7" stroke-width="2" fill="none"/>
+    <text x="750" y="290" text-anchor="middle" fill="#a1a1a6" font-size="15">18 hours of copying, every week</text>
+    <circle r="5" fill="#fff"><animateMotion dur="3s" repeatCount="indefinite"><mpath href="#w1"/></animateMotion></circle>
+    <circle r="5" fill="#fff"><animateMotion dur="3s" begin="0.8s" repeatCount="indefinite"><mpath href="#w2"/></animateMotion></circle>
+    <circle r="5" fill="#fff"><animateMotion dur="3s" begin="1.6s" repeatCount="indefinite"><mpath href="#w3"/></animateMotion></circle>
+    </svg></div><div class="scenecap">The problem: everything piled into one report, built by hand</div></div>
+
     <h3>The crew</h3>
     <p>The Scout reads the trackers, the task lists, and the project folders every morning, and flags anything overdue, blocked, or silent for too long.</p>
     <p>The Scribe takes meeting transcripts and turns them into decisions and action items, each with an owner and a date.</p>
@@ -94,6 +115,18 @@
     <p>The Scout flagged 214 risks on its first morning. Two hundred and fourteen. Most were noise: a task one hour overdue is not a risk, it is a Tuesday.</p>
     <p>The Scribe assigned an action item to a man who had left the company in March.</p>
     <p>The Coordinator, helpful and confident, put a milestone date in the Friday pack that did not exist anywhere in any plan. Invented it, formatted it beautifully.</p>
+
+    <div class="scenewrap"><div class="scene" role="img" aria-label="Sketch: an alarm pulsing beside the number 214, the risk flags raised on the first morning, mostly noise">
+    <svg viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg" font-family="inherit">
+    <circle cx="200" cy="150" r="15" fill="#fff"/>
+    <circle cx="200" cy="150" r="20" fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="1.5"><animate attributeName="r" values="20;115" dur="2.6s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.6s" repeatCount="indefinite"/></circle>
+    <circle cx="200" cy="150" r="20" fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="1.5"><animate attributeName="r" values="20;115" dur="2.6s" begin="0.9s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.6s" begin="0.9s" repeatCount="indefinite"/></circle>
+    <circle cx="200" cy="150" r="20" fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="1.5"><animate attributeName="r" values="20;115" dur="2.6s" begin="1.8s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.6s" begin="1.8s" repeatCount="indefinite"/></circle>
+    <text x="410" y="165" fill="#f5f5f7" font-size="96" font-weight="700">214</text>
+    <text x="414" y="205" fill="#a1a1a6" font-size="19">risk flags on the first morning, mostly noise</text>
+    <text x="414" y="240" fill="#a1a1a6" font-size="16">A task one hour late is not a risk. It is a Tuesday.</text>
+    </svg></div><div class="scenecap">Week one: the alarm that cried wolf</div></div>
+
     <p>This is the part of the story vendors skip. An agent that is wrong with confidence is worse than no agent, because people trust a clean document.</p>
 
     <h3>The fix was not better magic. It was management.</h3>
@@ -101,13 +134,61 @@
     <p>Thresholds got defined like acceptance criteria. Overdue by a day is a note. Overdue by a week, or blocking another team, is a flag. The Scout went from 214 alarms to about a dozen that mattered.</p>
     <p>And a human gate went in, permanently: nothing leaves the building until a project manager reads the pack. Ten minutes of review instead of six hours of assembly.</p>
 
+    <div class="scenewrap"><div class="scene" role="img" aria-label="Sketch: a funnel filtering every claim by evidence and thresholds down to 12 flags that matter, beside a human gate box">
+    <svg viewBox="0 0 900 370" xmlns="http://www.w3.org/2000/svg" font-family="inherit">
+    <path d="M250 26 L650 26 L492 196 L408 196 Z" fill="#101012" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-dasharray="6 4"/>
+    <line x1="297" y1="92" x2="603" y2="92" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" stroke-dasharray="4 4"/>
+    <line x1="352" y1="146" x2="548" y2="146" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" stroke-dasharray="4 4"/>
+    <text x="660" y="97" fill="#a1a1a6" font-size="15.5">no evidence, no entry</text>
+    <text x="660" y="151" fill="#a1a1a6" font-size="15.5">a week late, or blocking, is a flag</text>
+    <path id="wF" d="M450 20 L450 240" fill="none" stroke="none"/>
+    <circle r="5" fill="#fff"><animateMotion dur="2.8s" repeatCount="indefinite"><mpath href="#wF"/></animateMotion></circle>
+    <circle r="5" fill="#fff"><animateMotion dur="2.8s" begin="1s" repeatCount="indefinite"><mpath href="#wF"/></animateMotion></circle>
+    <circle r="5" fill="#fff"><animateMotion dur="2.8s" begin="2s" repeatCount="indefinite"><mpath href="#wF"/></animateMotion></circle>
+    <rect x="320" y="248" width="260" height="76" rx="12" fill="#161618" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/>
+    <text x="450" y="282" text-anchor="middle" fill="#f5f5f7" font-size="17" font-weight="700">12 FLAGS THAT MATTER</text>
+    <text x="450" y="306" text-anchor="middle" fill="#a1a1a6" font-size="13.5">down from 214 alarms</text>
+    <rect x="640" y="248" width="236" height="76" rx="12" fill="#101012" stroke="rgba(255,255,255,0.45)" stroke-width="1.5" stroke-dasharray="6 4"/>
+    <text x="758" y="282" text-anchor="middle" fill="#f5f5f7" font-size="16" font-weight="700">THE HUMAN GATE</text>
+    <text x="758" y="306" text-anchor="middle" fill="#a1a1a6" font-size="13.5">a PM reads every pack</text>
+    <line x1="580" y1="286" x2="640" y2="286" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" stroke-dasharray="4 4"/>
+    </svg></div><div class="scenecap">The fix: a funnel for claims, and a human at the gate</div></div>
+
     <h3>Week three: the save</h3>
     <p>The Watchdog flagged a pattern no human had connected. One subcontractor, three deliveries, each two or three days late. Small numbers, easy to forgive one by one. Together they pointed at a fourth delivery, the one sitting on the critical path, due in two weeks.</p>
+
+    <div class="scenewrap"><div class="scene" role="img" aria-label="Sketch: a timeline of three small late deliveries building toward a fourth delivery on the critical path, with the milestone held">
+    <svg viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg" font-family="inherit">
+    <rect x="60" y="52" width="158" height="76" rx="12" fill="#101012" stroke="rgba(255,255,255,0.45)" stroke-width="1.5" stroke-dasharray="6 4"/><text x="139" y="84" text-anchor="middle" fill="#f5f5f7" font-size="15" font-weight="700">DELIVERY 1</text><text x="139" y="108" text-anchor="middle" fill="#a1a1a6" font-size="14">2 days late</text>
+    <rect x="252" y="52" width="158" height="76" rx="12" fill="#101012" stroke="rgba(255,255,255,0.45)" stroke-width="1.5" stroke-dasharray="6 4"/><text x="331" y="84" text-anchor="middle" fill="#f5f5f7" font-size="15" font-weight="700">DELIVERY 2</text><text x="331" y="108" text-anchor="middle" fill="#a1a1a6" font-size="14">3 days late</text>
+    <rect x="444" y="52" width="158" height="76" rx="12" fill="#101012" stroke="rgba(255,255,255,0.45)" stroke-width="1.5" stroke-dasharray="6 4"/><text x="523" y="84" text-anchor="middle" fill="#f5f5f7" font-size="15" font-weight="700">DELIVERY 3</text><text x="523" y="108" text-anchor="middle" fill="#a1a1a6" font-size="14">2 days late</text>
+    <rect x="636" y="52" width="204" height="76" rx="12" fill="#161618" stroke="#fff" stroke-width="2"><animate attributeName="stroke-opacity" values="1;0.35;1" dur="2.2s" repeatCount="indefinite"/></rect>
+    <text x="738" y="84" text-anchor="middle" fill="#f5f5f7" font-size="15" font-weight="700">DELIVERY 4</text><text x="738" y="108" text-anchor="middle" fill="#a1a1a6" font-size="14">on the critical path</text>
+    <line x1="50" y1="185" x2="850" y2="185" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" stroke-dasharray="5 5"/>
+    <path id="wT" d="M60 185 L840 185" fill="none" stroke="none"/>
+    <circle r="5" fill="#fff"><animateMotion dur="4.5s" repeatCount="indefinite"><mpath href="#wT"/></animateMotion></circle>
+    <line x1="812" y1="185" x2="812" y2="225" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/>
+    <path d="M812 198 L852 205 L812 212 Z" fill="#f5f5f7"/>
+    <text x="806" y="262" text-anchor="middle" fill="#f5f5f7" font-size="15" font-weight="700">MILESTONE HELD</text>
+    <text x="139" y="238" text-anchor="middle" fill="#a1a1a6" font-size="14.5">small delays, easy to forgive one by one</text>
+    </svg></div><div class="scenecap">Week three: the pattern the Watchdog caught in time</div></div>
+
     <p>The PM called the subcontractor that day, not in week six when the truck simply would not arrive. The delivery was re-planned, a partial shipment came early, and the milestone held.</p>
     <p>That one catch paid for the whole deployment. Not because the AI was brilliant, but because it never gets tired of reading the boring data, and humans, honestly, do.</p>
 
     <h3>Where it landed</h3>
     <p>The Friday pack now takes about forty minutes of human review, down from eighteen hours of assembly. Risks surface in days instead of weeks. And the four project managers, who quietly feared this crew was their replacement, became its trainers, because they were the only ones who knew what a real flag looked like.</p>
+
+    <div class="scenewrap"><div class="scene" role="img" aria-label="Sketch: before and after bars, 18 hours of assembly every Friday shrinking to 40 minutes of human review">
+    <svg viewBox="0 0 900 230" xmlns="http://www.w3.org/2000/svg" font-family="inherit">
+    <text x="30" y="52" fill="#a1a1a6" font-size="15" letter-spacing="2">BEFORE</text>
+    <rect x="30" y="66" width="0" height="26" rx="8" fill="rgba(255,255,255,0.28)"><animate attributeName="width" values="0;800" dur="1.8s" fill="freeze"/></rect>
+    <text x="30" y="122" fill="#f5f5f7" font-size="16.5">18 hours of assembly, every Friday</text>
+    <text x="30" y="168" fill="#a1a1a6" font-size="15" letter-spacing="2">AFTER</text>
+    <rect x="30" y="182" width="0" height="26" rx="8" fill="#f5f5f7"><animate attributeName="width" values="0;150" dur="1.8s" fill="freeze"/></rect>
+    <text x="196" y="201" fill="#f5f5f7" font-size="16.5">40 minutes of human review</text>
+    </svg></div><div class="scenecap">Where it landed: the Friday pack, before and after</div></div>
+
     <p>The lesson is the oldest one in project management, wearing new clothes. A tool does not fix a broken process. You scope the work, define what good looks like, manage the risks, including the risk that your own system lies to you, and you keep a human accountable at the gate.</p>
     <p>Do that, and the agents stop being a demo. They become staff.</p>
 
