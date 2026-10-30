@@ -37,16 +37,16 @@
   p { font-size: clamp(1.1rem, 2.6vw, 1.45rem); line-height: 1.6; color: #d6d6da; max-width: 780px; margin: 0 auto 24px; }
   p strong { color: #fff; }
   .divider { width: 64px; height: 2px; margin: 0 auto; background: linear-gradient(90deg, #ffffff, #6e6e73); border: none; }
-  .photoframe { width: min(460px, 88vw); margin: 46px auto 0; border-radius: 26px; overflow: hidden; }
+  .photoframe { width: min(460px, 100%); margin: 46px auto 0; border-radius: 26px; overflow: hidden; }
   .photoframe img { width: 100%; display: block; transform: scale(1.16); will-change: transform; }
-  .thumbframe { width: min(360px, 84vw); margin: 40px auto 8px; border-radius: 26px; overflow: hidden; }
+  .thumbframe { width: min(360px, 100%); margin: 40px auto 8px; border-radius: 26px; overflow: hidden; }
   .thumbframe img { width: 100%; height: 300px; object-fit: cover; display: block; }
   .scene { width: min(560px, 92vw); margin: 46px auto 0; }
   .scene svg { width: 100%; height: auto; display: block; }
-  .liveframe { width: min(720px, 94vw); height: min(440px, 60vw); margin: 46px auto 0; border-radius: 26px; overflow: hidden; }
-  .liveframe img { width: 100%; height: 100%; object-fit: cover; display: block; animation: kenburns 22s ease-in-out infinite alternate; will-change: transform; }
-  .liveframe.slow img { animation-duration: 28s; }
-  @keyframes kenburns { from { transform: scale(1.03) translate(0.6%, 0.4%); } to { transform: scale(1.15) translate(-1.4%, -1%); } }
+  .liveframe { width: min(720px, 100%); aspect-ratio: 16 / 10; margin: 46px auto 0; border-radius: 26px; overflow: hidden; }
+  .liveframe img { width: 100%; height: 100%; object-fit: cover; display: block; animation: kenburns 16s ease-in-out infinite alternate; will-change: transform; }
+  .liveframe.slow img { animation-duration: 20s; }
+  @keyframes kenburns { from { transform: scale(1.07) translate(1.2%, 0.6%) rotate(0.3deg); } to { transform: scale(1.26) translate(-2.4%, -1.4%) rotate(-0.4deg); } }
   .flagwave { transform-origin: 72px 26px; animation: sway 7s ease-in-out infinite; }
   @keyframes sway { 0%,100% { transform: rotate(0deg) skewY(0deg); } 25% { transform: rotate(1.2deg) skewY(0.9deg); } 50% { transform: rotate(0.4deg) skewY(1.6deg); } 75% { transform: rotate(-0.8deg) skewY(0.7deg); } }
   .ember { opacity: 0; animation: rise 7.5s linear infinite; }
@@ -75,9 +75,9 @@
   .stat { margin-bottom: 34px; }
   .stat .top { display: flex; justify-content: space-between; align-items: baseline; }
   .stat .label { font-size: 1rem; color: #a1a1a6; letter-spacing: 0.06em; text-transform: uppercase; }
-  .stat .num { font-size: clamp(1.9rem, 5vw, 2.9rem); font-weight: 700; color: #fff; }
+  .stat .num { font-size: clamp(1.9rem, 5vw, 2.9rem); font-weight: 700; background: linear-gradient(90deg, #ff3b30, #bf5af2); -webkit-background-clip: text; background-clip: text; color: transparent; }
   .bar { height: 8px; border-radius: 99px; background: rgba(255,255,255,0.12); margin-top: 10px; overflow: hidden; }
-  .bar i { display: block; height: 100%; width: 0%; border-radius: 99px; background: linear-gradient(90deg, #ffffff, #a1a1a6); transition: width 1.6s cubic-bezier(.22,.8,.28,1); }
+  .bar i { display: block; height: 100%; width: 0%; border-radius: 99px; background: linear-gradient(90deg, #ff3b30, #bf5af2); transition: width 1.6s cubic-bezier(.22,.8,.28,1); }
   ul.credlist { list-style: none; max-width: 720px; margin: 0 auto; }
   ul.credlist li { font-size: clamp(1.05rem, 2.5vw, 1.35rem); color: #d6d6da; padding: 19px 10px; border-bottom: 1px solid rgba(255,255,255,0.12); }
   ul.credlist li:last-child { border-bottom: none; }
