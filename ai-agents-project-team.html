@@ -81,7 +81,7 @@
 
   <article>
     <p>Here is the problem, because every good project story starts with one.</p>
-    <p>A services company is running twelve client projects at the same time. The work itself is fine. The information is drowning. Status lives in emails, three different trackers, and the heads of four project managers. Every Friday, those PMs burn about six hours each building the weekly report by hand. Eighteen to twenty hours of senior time, spent copying the past instead of managing the future.</p>
+    <p>A services company is running twelve client projects at the same time. The work itself is fine. The information is drowning. Status lives in emails, three different trackers, and the heads of four project managers. Every Friday, those four PMs burn six hours each building the weekly report by hand. Eighteen to twenty hours of senior time, spent copying the past instead of managing the future.</p>
     <p>And still, things slip through. A permit delay sat unnoticed in an inbox for three weeks and cost a project two weeks of schedule. Nobody was lazy. The system was broken.</p>
     <p>So the decision was made: deploy a crew of AI agents to do the chasing. Not one chatbot. A crew, each agent with one job, coordinated like a small team.</p>
 
@@ -104,17 +104,17 @@
     </svg></div><div class="scenecap">The problem: everything piled into one report, built by hand</div></div>
 
     <h3>The crew</h3>
-    <p>The Scout reads the trackers, the task lists, and the project folders every morning, and flags anything overdue, blocked, or silent for too long.</p>
-    <p>The Scribe takes meeting transcripts and turns them into decisions and action items, each with an owner and a date.</p>
-    <p>The Watchdog compares plan against actuals: budget burn, milestone drift, repeated small delays from the same vendor. It raises risks with the evidence attached.</p>
-    <p>The Coordinator sits on top. It checks the other three against each other, kills duplicates, and assembles one Friday pack for a human to review and send.</p>
+    <p>Scout reads every tracker, task list, and project folder each morning, and flags anything overdue, blocked, or silent for too long.</p>
+    <p>Scribe turns meeting transcripts into decisions and action items, each with an owner and a date.</p>
+    <p>Watchdog compares plan against actuals: budget burn, milestone drift, repeated small delays from the same vendor. It raises risks with the evidence attached.</p>
+    <p>Coordinator sits on top, checks the other three against each other, kills duplicates, and assembles one Friday pack for a human to review and send.</p>
     <p>The build itself, for those who ask about tools: Python underneath, the crew's roles and hand-offs defined in CrewAI, and the Coordinator's review flow, what gets checked, in what order, and what gets escalated to a human, graphed in LangGraph.</p>
     <p>Roles, inputs, outputs, acceptance criteria. Written down before a single agent ran. Deploying agents is a project, and it was scoped like one.</p>
 
     <h3>Week one: the disaster</h3>
-    <p>The Scout flagged 214 risks on its first morning. Two hundred and fourteen. Most were noise: a task one hour overdue is not a risk, it is a Tuesday.</p>
-    <p>The Scribe assigned an action item to a man who had left the company in March.</p>
-    <p>The Coordinator, helpful and confident, put a milestone date in the Friday pack that did not exist anywhere in any plan. Invented it, formatted it beautifully.</p>
+    <p>On its first morning, Scout flagged 214 risks. Two hundred and fourteen. Most were noise: a task one hour overdue is not a risk, it is a Tuesday.</p>
+    <p>Scribe assigned an action item to a man who had left the company in March.</p>
+    <p>Coordinator, helpful and confident, invented a milestone date for the Friday pack, one that existed in no plan anywhere, and formatted it beautifully.</p>
 
     <div class="scenewrap"><div class="scene" role="img" aria-label="Sketch: an alarm pulsing beside the number 214, the risk flags raised on the first morning, mostly noise">
     <svg viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg" font-family="inherit">
@@ -130,9 +130,9 @@
     <p>This is the part of the story vendors skip. An agent that is wrong with confidence is worse than no agent, because people trust a clean document.</p>
 
     <h3>The fix was not better magic. It was management.</h3>
-    <p>Each agent got grounded: no claim without a link to the source it came from. No evidence, no entry in the pack.</p>
-    <p>Thresholds got defined like acceptance criteria. Overdue by a day is a note. Overdue by a week, or blocking another team, is a flag. The Scout went from 214 alarms to about a dozen that mattered.</p>
-    <p>And a human gate went in, permanently: nothing leaves the building until a project manager reads the pack. Ten minutes of review instead of six hours of assembly.</p>
+    <p>So every agent got grounded. No claim without a link to its source. No evidence, no entry in the pack.</p>
+    <p>Thresholds were set like acceptance criteria: a day late is a note; a week late, or blocking another team, is a flag. Scout went from 214 alarms to about a dozen that mattered.</p>
+    <p>And a human gate went in, permanently. Nothing leaves the building until a project manager reads the pack. Ten minutes of review instead of six hours of assembly.</p>
 
     <div class="scenewrap"><div class="scene" role="img" aria-label="Sketch: a funnel filtering every claim by evidence and thresholds down to 12 flags that matter, beside a human gate box">
     <svg viewBox="0 0 900 370" xmlns="http://www.w3.org/2000/svg" font-family="inherit">
@@ -155,7 +155,7 @@
     </svg></div><div class="scenecap">The fix: a funnel for claims, and a human at the gate</div></div>
 
     <h3>Week three: the save</h3>
-    <p>The Watchdog flagged a pattern no human had connected. One subcontractor, three deliveries, each two or three days late. Small numbers, easy to forgive one by one. Together they pointed at a fourth delivery, the one sitting on the critical path, due in two weeks.</p>
+    <p>Then Watchdog flagged a pattern no human had connected. One subcontractor, three deliveries, each two or three days late. Small numbers, easy to forgive one by one. Together they pointed at a fourth delivery, the one sitting on the critical path, due in two weeks.</p>
 
     <div class="scenewrap"><div class="scene" role="img" aria-label="Sketch: a timeline of three small late deliveries building toward a fourth delivery on the critical path, with the milestone held">
     <svg viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg" font-family="inherit">
@@ -173,11 +173,11 @@
     <text x="139" y="238" text-anchor="middle" fill="#a1a1a6" font-size="14.5">small delays, easy to forgive one by one</text>
     </svg></div><div class="scenecap">Week three: the pattern the Watchdog caught in time</div></div>
 
-    <p>The PM called the subcontractor that day, not in week six when the truck simply would not arrive. The delivery was re-planned, a partial shipment came early, and the milestone held.</p>
+    <p>The PM called the subcontractor that same day, not in week six, when the truck simply would not arrive. The delivery was re-planned, a partial shipment came early, and the milestone held.</p>
     <p>That one catch paid for the whole deployment. Not because the AI was brilliant, but because it never gets tired of reading the boring data, and humans, honestly, do.</p>
 
     <h3>Where it landed</h3>
-    <p>The Friday pack now takes about forty minutes of human review, down from eighteen hours of assembly. Risks surface in days instead of weeks. And the four project managers, who quietly feared this crew was their replacement, became its trainers, because they were the only ones who knew what a real flag looked like.</p>
+    <p>Friday's pack now takes forty minutes of human review, down from eighteen hours of assembly. Risks surface in days instead of weeks. And the four project managers, who quietly feared this crew was their replacement, became its trainers, because they were the only ones who knew what a real flag looked like.</p>
 
     <div class="scenewrap"><div class="scene" role="img" aria-label="Sketch: before and after bars, 18 hours of assembly every Friday shrinking to 40 minutes of human review">
     <svg viewBox="0 0 900 230" xmlns="http://www.w3.org/2000/svg" font-family="inherit">
