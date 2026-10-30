@@ -82,6 +82,10 @@
   ul.credlist li { font-size: clamp(1.05rem, 2.5vw, 1.35rem); color: #d6d6da; padding: 19px 10px; border-bottom: 1px solid rgba(255,255,255,0.12); }
   ul.credlist li:last-child { border-bottom: none; }
   .big { font-size: clamp(1.8rem, 5.4vw, 3.1rem); font-weight: 700; line-height: 1.3; color: #fff; max-width: 840px; margin: 0 auto; }
+  .artcard { max-width: 780px; margin: 0 auto; }
+  .artcard h3 { font-size: clamp(1.5rem, 4vw, 2.2rem); font-weight: 700; line-height: 1.25; margin: 38px auto 16px; max-width: 720px; }
+  .artcard p { margin-bottom: 18px; }
+  .artmeta { font-size: 0.95rem; color: #86868b; letter-spacing: 0.14em; text-transform: uppercase; }
   a { color: #e8e8ed; text-decoration: none; }
   a:hover { text-decoration: underline; }
   footer { padding: 70px 24px 90px; color: #86868b; font-size: 0.95rem; }
@@ -233,6 +237,44 @@
   <div class="thumbframe"><img src="library-bw.jpg" alt="Houssam Harwash reading in the library"></div>
   <p>His Sheridan portfolio includes an original TikTok usage study with survey research and Looker Studio dashboards, brand and campaign case analyses (Syncapse, Shaw Media, Anheuser-Busch, Uber vs Taxi), a full marketing plan, a B2B digital marketing campaign, and agency pitch work.</p>
   <p><a href="https://drive.google.com/drive/folders/13Qb-6L6ilye2OXwsmFaCPuDExT5mIRgX">View the research portfolio</a></p>
+</section>
+
+<section class="rv up">
+  <h2>Articles</h2>
+  <p>Stories from real project work and the new methods changing it. A problem, a deployment, a mess, a fix.</p>
+  <div class="scene" role="img" aria-label="Sketch of an AI agent crew: Scout, Scribe and Watchdog feeding a Coordinator, which assembles the Friday pack for human approval">
+    <svg viewBox="0 0 900 470" xmlns="http://www.w3.org/2000/svg" font-family="inherit">
+      <rect x="30" y="30" width="240" height="92" rx="14" fill="#101012" stroke="rgba(255,255,255,0.45)" stroke-width="1.5" stroke-dasharray="6 4"/>
+      <text x="150" y="70" text-anchor="middle" fill="#f5f5f7" font-size="21" font-weight="700">SCOUT</text>
+      <text x="150" y="98" text-anchor="middle" fill="#a1a1a6" font-size="14.5">flags what is late or blocked</text>
+      <rect x="330" y="30" width="240" height="92" rx="14" fill="#101012" stroke="rgba(255,255,255,0.45)" stroke-width="1.5" stroke-dasharray="6 4"/>
+      <text x="450" y="70" text-anchor="middle" fill="#f5f5f7" font-size="21" font-weight="700">SCRIBE</text>
+      <text x="450" y="98" text-anchor="middle" fill="#a1a1a6" font-size="14.5">meetings into actions</text>
+      <rect x="630" y="30" width="240" height="92" rx="14" fill="#101012" stroke="rgba(255,255,255,0.45)" stroke-width="1.5" stroke-dasharray="6 4"/>
+      <text x="750" y="70" text-anchor="middle" fill="#f5f5f7" font-size="21" font-weight="700">WATCHDOG</text>
+      <text x="750" y="98" text-anchor="middle" fill="#a1a1a6" font-size="14.5">raises risks with evidence</text>
+      <path id="pA" d="M150 122 C 150 190, 330 190, 385 232" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" stroke-dasharray="5 5"/>
+      <path id="pB" d="M450 122 L450 232" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" stroke-dasharray="5 5"/>
+      <path id="pC" d="M750 122 C 750 190, 570 190, 515 232" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" stroke-dasharray="5 5"/>
+      <rect x="290" y="232" width="320" height="92" rx="14" fill="#161618" stroke="rgba(255,255,255,0.65)" stroke-width="1.5"/>
+      <text x="450" y="272" text-anchor="middle" fill="#f5f5f7" font-size="21" font-weight="700">COORDINATOR</text>
+      <text x="450" y="300" text-anchor="middle" fill="#a1a1a6" font-size="14.5">checks, dedupes, assembles</text>
+      <path id="pD" d="M450 324 L450 372" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" stroke-dasharray="5 5"/>
+      <rect x="290" y="372" width="320" height="62" rx="14" fill="#101012" stroke="rgba(255,255,255,0.45)" stroke-width="1.5" stroke-dasharray="6 4"/>
+      <text x="450" y="399" text-anchor="middle" fill="#f5f5f7" font-size="18" font-weight="700">THE FRIDAY PACK</text>
+      <text x="450" y="422" text-anchor="middle" fill="#a1a1a6" font-size="13.5">a human approves before it leaves</text>
+      <circle r="5" fill="#fff"><animateMotion dur="3.2s" repeatCount="indefinite"><mpath href="#pA"/></animateMotion></circle>
+      <circle r="5" fill="#fff"><animateMotion dur="3.2s" begin="0.7s" repeatCount="indefinite"><mpath href="#pB"/></animateMotion></circle>
+      <circle r="5" fill="#fff"><animateMotion dur="3.2s" begin="1.4s" repeatCount="indefinite"><mpath href="#pC"/></animateMotion></circle>
+      <circle r="5" fill="#fff"><animateMotion dur="2.2s" begin="2.1s" repeatCount="indefinite"><mpath href="#pD"/></animateMotion></circle>
+    </svg>
+  </div>
+  <div class="artcard">
+    <div class="artmeta">October 29, 2026 · Agentic AI · Project Management</div>
+    <h3><a href="ai-agents-project-team.html">I Put Four AI Agents on a Project Team. Week One Was a Disaster.</a></h3>
+    <p>Twelve projects drowning in status chaos, a four agent crew deployed to fix it, 214 false alarms in one morning, and the project management that turned a demo into staff.</p>
+    <p><a href="ai-agents-project-team.html">Read the article</a></p>
+  </div>
 </section>
 
 <footer>

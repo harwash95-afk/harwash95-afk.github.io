@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I Put Four AI Agents on a Project Team. Week One Was a Disaster. | Houssam Harwash</title>
+<meta name="description" content="Twelve projects drowning in status chaos, a four-agent AI crew built with CrewAI and LangGraph, a disastrous first week, and the project management that turned a demo into staff. By Houssam Harwash, PMP | CM.">
+<link rel="canonical" href="https://harwash95-afk.github.io/ai-agents-project-team.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="I Put Four AI Agents on a Project Team. Week One Was a Disaster.">
+<meta property="og:description" content="A problem, a deployment, a mess, a fix. How an agent crew of Scout, Scribe, Watchdog and Coordinator took over the Friday report.">
+<meta property="og:url" content="https://harwash95-afk.github.io/ai-agents-project-team.html">
+<meta property="og:image" content="https://harwash95-afk.github.io/headshot-bw.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"I Put Four AI Agents on a Project Team. Week One Was a Disaster.","description":"Twelve projects drowning in status chaos, a four-agent AI crew built with CrewAI and LangGraph, a disastrous first week, and the project management that turned a demo into staff.","author":{"@type":"Person","name":"Houssam Harwash","url":"https://harwash95-afk.github.io/"},"datePublished":"2026-10-29","mainEntityOfPage":"https://harwash95-afk.github.io/ai-agents-project-team.html"}
+</script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #000; color: #f5f5f7; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  main { max-width: 780px; margin: 0 auto; padding: 64px 24px 30px; }
+  .back { font-size: 0.98rem; color: #a1a1a6; }
+  a { color: #e8e8ed; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  h1 { font-size: clamp(2rem, 6vw, 3.4rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.14; margin: 44px 0 20px; }
+  .sub { font-size: clamp(1.15rem, 3vw, 1.5rem); line-height: 1.45; color: #a1a1a6; margin-bottom: 30px; }
+  .byline { font-size: 0.95rem; color: #86868b; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 12px; }
+  .scene { width: min(620px, 100%); margin: 40px auto 8px; }
+  .scene svg { width: 100%; height: auto; display: block; }
+  article p { font-size: clamp(1.08rem, 2.5vw, 1.3rem); line-height: 1.72; color: #d6d6da; margin: 0 0 24px; }
+  article h3 { font-size: clamp(1.35rem, 3.6vw, 1.8rem); font-weight: 700; color: #fff; margin: 46px 0 18px; }
+  .sign { font-style: italic; color: #a1a1a6; margin-top: 40px; }
+  footer { text-align: center; padding: 60px 24px 84px; color: #86868b; font-size: 0.95rem; }
+</style>
+</head>
+<body>
+<main>
+  <a class="back" href="index.html">← Houssam Harwash</a>
+  <h1>I Put Four AI Agents on a Project Team. Week One Was a Disaster.</h1>
+  <p class="sub">The problem was real, the first deployment was a mess, and the fix was pure project management</p>
+  <div class="byline">By Houssam Harwash, PMP® | CM® · October 29, 2026</div>
+
+  <div class="scene" role="img" aria-label="Sketch of an AI agent crew: Scout, Scribe and Watchdog feeding a Coordinator, which assembles the Friday pack for human approval">
+    <svg viewBox="0 0 900 470" xmlns="http://www.w3.org/2000/svg" font-family="inherit">
+      <rect x="30" y="30" width="240" height="92" rx="14" fill="#101012" stroke="rgba(255,255,255,0.45)" stroke-width="1.5" stroke-dasharray="6 4"/>
+      <text x="150" y="70" text-anchor="middle" fill="#f5f5f7" font-size="21" font-weight="700">SCOUT</text>
+      <text x="150" y="98" text-anchor="middle" fill="#a1a1a6" font-size="14.5">flags what is late or blocked</text>
+      <rect x="330" y="30" width="240" height="92" rx="14" fill="#101012" stroke="rgba(255,255,255,0.45)" stroke-width="1.5" stroke-dasharray="6 4"/>
+      <text x="450" y="70" text-anchor="middle" fill="#f5f5f7" font-size="21" font-weight="700">SCRIBE</text>
+      <text x="450" y="98" text-anchor="middle" fill="#a1a1a6" font-size="14.5">meetings into actions</text>
+      <rect x="630" y="30" width="240" height="92" rx="14" fill="#101012" stroke="rgba(255,255,255,0.45)" stroke-width="1.5" stroke-dasharray="6 4"/>
+      <text x="750" y="70" text-anchor="middle" fill="#f5f5f7" font-size="21" font-weight="700">WATCHDOG</text>
+      <text x="750" y="98" text-anchor="middle" fill="#a1a1a6" font-size="14.5">raises risks with evidence</text>
+      <path id="pA" d="M150 122 C 150 190, 330 190, 385 232" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" stroke-dasharray="5 5"/>
+      <path id="pB" d="M450 122 L450 232" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" stroke-dasharray="5 5"/>
+      <path id="pC" d="M750 122 C 750 190, 570 190, 515 232" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" stroke-dasharray="5 5"/>
+      <rect x="290" y="232" width="320" height="92" rx="14" fill="#161618" stroke="rgba(255,255,255,0.65)" stroke-width="1.5"/>
+      <text x="450" y="272" text-anchor="middle" fill="#f5f5f7" font-size="21" font-weight="700">COORDINATOR</text>
+      <text x="450" y="300" text-anchor="middle" fill="#a1a1a6" font-size="14.5">checks, dedupes, assembles</text>
+      <path id="pD" d="M450 324 L450 372" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" stroke-dasharray="5 5"/>
+      <rect x="290" y="372" width="320" height="62" rx="14" fill="#101012" stroke="rgba(255,255,255,0.45)" stroke-width="1.5" stroke-dasharray="6 4"/>
+      <text x="450" y="399" text-anchor="middle" fill="#f5f5f7" font-size="18" font-weight="700">THE FRIDAY PACK</text>
+      <text x="450" y="422" text-anchor="middle" fill="#a1a1a6" font-size="13.5">a human approves before it leaves</text>
+      <circle r="5" fill="#fff"><animateMotion dur="3.2s" repeatCount="indefinite"><mpath href="#pA"/></animateMotion></circle>
+      <circle r="5" fill="#fff"><animateMotion dur="3.2s" begin="0.7s" repeatCount="indefinite"><mpath href="#pB"/></animateMotion></circle>
+      <circle r="5" fill="#fff"><animateMotion dur="3.2s" begin="1.4s" repeatCount="indefinite"><mpath href="#pC"/></animateMotion></circle>
+      <circle r="5" fill="#fff"><animateMotion dur="2.2s" begin="2.1s" repeatCount="indefinite"><mpath href="#pD"/></animateMotion></circle>
+    </svg>
+  </div>
+
+  <article>
+    <p>Here is the problem, because every good project story starts with one.</p>
+    <p>A services company is running twelve client projects at the same time. The work itself is fine. The information is drowning. Status lives in emails, three different trackers, and the heads of four project managers. Every Friday, those PMs burn about six hours each building the weekly report by hand. Eighteen to twenty hours of senior time, spent copying the past instead of managing the future.</p>
+    <p>And still, things slip through. A permit delay sat unnoticed in an inbox for three weeks and cost a project two weeks of schedule. Nobody was lazy. The system was broken.</p>
+    <p>So the decision was made: deploy a crew of AI agents to do the chasing. Not one chatbot. A crew, each agent with one job, coordinated like a small team.</p>
+
+    <h3>The crew</h3>
+    <p>The Scout reads the trackers, the task lists, and the project folders every morning, and flags anything overdue, blocked, or silent for too long.</p>
+    <p>The Scribe takes meeting transcripts and turns them into decisions and action items, each with an owner and a date.</p>
+    <p>The Watchdog compares plan against actuals: budget burn, milestone drift, repeated small delays from the same vendor. It raises risks with the evidence attached.</p>
+    <p>The Coordinator sits on top. It checks the other three against each other, kills duplicates, and assembles one Friday pack for a human to review and send.</p>
+    <p>The build itself, for those who ask about tools: Python underneath, the crew's roles and hand-offs defined in CrewAI, and the Coordinator's review flow, what gets checked, in what order, and what gets escalated to a human, graphed in LangGraph.</p>
+    <p>Roles, inputs, outputs, acceptance criteria. Written down before a single agent ran. Deploying agents is a project, and it was scoped like one.</p>
+
+    <h3>Week one: the disaster</h3>
+    <p>The Scout flagged 214 risks on its first morning. Two hundred and fourteen. Most were noise: a task one hour overdue is not a risk, it is a Tuesday.</p>
+    <p>The Scribe assigned an action item to a man who had left the company in March.</p>
+    <p>The Coordinator, helpful and confident, put a milestone date in the Friday pack that did not exist anywhere in any plan. Invented it, formatted it beautifully.</p>
+    <p>This is the part of the story vendors skip. An agent that is wrong with confidence is worse than no agent, because people trust a clean document.</p>
+
+    <h3>The fix was not better magic. It was management.</h3>
+    <p>Each agent got grounded: no claim without a link to the source it came from. No evidence, no entry in the pack.</p>
+    <p>Thresholds got defined like acceptance criteria. Overdue by a day is a note. Overdue by a week, or blocking another team, is a flag. The Scout went from 214 alarms to about a dozen that mattered.</p>
+    <p>And a human gate went in, permanently: nothing leaves the building until a project manager reads the pack. Ten minutes of review instead of six hours of assembly.</p>
+
+    <h3>Week three: the save</h3>
+    <p>The Watchdog flagged a pattern no human had connected. One subcontractor, three deliveries, each two or three days late. Small numbers, easy to forgive one by one. Together they pointed at a fourth delivery, the one sitting on the critical path, due in two weeks.</p>
+    <p>The PM called the subcontractor that day, not in week six when the truck simply would not arrive. The delivery was re-planned, a partial shipment came early, and the milestone held.</p>
+    <p>That one catch paid for the whole deployment. Not because the AI was brilliant, but because it never gets tired of reading the boring data, and humans, honestly, do.</p>
+
+    <h3>Where it landed</h3>
+    <p>The Friday pack now takes about forty minutes of human review, down from eighteen hours of assembly. Risks surface in days instead of weeks. And the four project managers, who quietly feared this crew was their replacement, became its trainers, because they were the only ones who knew what a real flag looked like.</p>
+    <p>The lesson is the oldest one in project management, wearing new clothes. A tool does not fix a broken process. You scope the work, define what good looks like, manage the risks, including the risk that your own system lies to you, and you keep a human accountable at the gate.</p>
+    <p>Do that, and the agents stop being a demo. They become staff.</p>
+
+    <p class="sign">Houssam Harwash, PMP® | CM®</p>
+  </article>
+</main>
+<footer>
+  Houssam Harwash, PMP® | CM® · Toronto, ON · <a href="mailto:harwash95@gmail.com">harwash95@gmail.com</a>
+</footer>
+</body>
+</html>
