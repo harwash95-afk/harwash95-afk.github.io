@@ -43,6 +43,19 @@
   .road { position: relative; }
   .roadline { position: absolute; left: 50%; top: 0; width: 2px; height: 100%; background: rgba(255,255,255,0.10); transform: translateX(-50%); }
   .roadfill { width: 100%; height: 0%; background: linear-gradient(180deg, #ff3b30, #bf5af2); }
+  .mapwrap { max-width: 1000px; margin: 10px auto 0; }
+  .mapwrap svg { width: 100%; height: auto; display: block; }
+  .spin { transform-origin: 500px 200px; animation: spin 70s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .node .core { fill: #3a3a3f; transition: fill .5s ease; }
+  .node .pulse { fill: none; stroke: rgba(255,255,255,0.0); stroke-width: 1.5; }
+  .node.on .core { fill: #fff; }
+  .node.on .pulse { stroke: rgba(255,255,255,0.45); animation: pulse 2.2s ease-out infinite; }
+  @keyframes pulse { 0% { r: 8; opacity: 1; } 100% { r: 30; opacity: 0; } }
+  .city { fill: #fff; font-size: 21px; font-weight: 600; opacity: 0; transition: opacity .6s ease; }
+  .sub { fill: #a1a1a6; font-size: 13.5px; opacity: 0; transition: opacity .6s ease; }
+  .lbl.on { opacity: 1; }
+  .jcap { margin-top: 26px; font-size: clamp(1.15rem, 2.8vw, 1.5rem); color: #fff; font-weight: 600; }
   .stats { max-width: 780px; margin: 10px auto 0; text-align: left; }
   .stat { margin-bottom: 34px; }
   .stat .top { display: flex; justify-content: space-between; align-items: baseline; }
@@ -80,6 +93,51 @@
   <h2 class="stack"><span>Project Management</span><span>Marketing</span><span>Delivery</span></h2>
   <p>Houssam Harwash is a project management and marketing professional based in <strong>Toronto, Canada</strong>. His career spans three countries and two industries, and one rule runs through all of it: plan it properly, then execute it precisely.</p>
   <p>Today his focus is project management, operations, and marketing, with a standing commitment to humanitarian work.</p>
+</section>
+
+<section class="rv up" id="journeySec">
+  <h2>The Journey</h2>
+  <div class="mapwrap">
+    <svg id="jmap" viewBox="0 0 1000 420" xmlns="http://www.w3.org/2000/svg" aria-label="Map of Houssam Harwash journey from Damascus to Khobar to Toronto">
+      <defs>
+        <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+          <circle cx="2" cy="2" r="1.6" fill="rgba(255,255,255,0.13)"/>
+        </pattern>
+        <linearGradient id="arcGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#ff3b30"/><stop offset="1" stop-color="#bf5af2"/>
+        </linearGradient>
+      </defs>
+      <rect width="1000" height="420" fill="url(#dots)"/>
+      <g class="spin">
+        <circle cx="500" cy="200" r="150" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1" stroke-dasharray="3 9"/>
+        <ellipse cx="500" cy="200" rx="150" ry="56" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+        <ellipse cx="500" cy="200" rx="150" ry="56" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1" transform="rotate(60 500 200)"/>
+        <ellipse cx="500" cy="200" rx="150" ry="56" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1" transform="rotate(120 500 200)"/>
+      </g>
+      <path id="arc1" d="M601,132 Q638,116 639,149" fill="none" stroke="url(#arcGrad)" stroke-width="2.5" stroke-linecap="round"/>
+      <path id="arc2" d="M639,149 Q470,-40 280,108" fill="none" stroke="url(#arcGrad)" stroke-width="2.5" stroke-linecap="round"/>
+      <circle id="travelDot" r="5.5" fill="#fff" opacity="0"/>
+      <g class="node" id="nDam">
+        <circle class="pulse" cx="601" cy="132" r="8"/>
+        <circle class="core" cx="601" cy="132" r="6.5"/>
+        <text class="city lbl" data-lbl="nDam" x="586" y="126" text-anchor="end">Damascus</text>
+        <text class="sub lbl" data-lbl="nDam" x="586" y="148" text-anchor="end">Syria, where it began</text>
+      </g>
+      <g class="node" id="nKho">
+        <circle class="pulse" cx="639" cy="149" r="8"/>
+        <circle class="core" cx="639" cy="149" r="6.5"/>
+        <text class="city lbl" data-lbl="nKho" x="656" y="146">Khobar</text>
+        <text class="sub lbl" data-lbl="nKho" x="656" y="168">Saudi Arabia, 2013 to 2018</text>
+      </g>
+      <g class="node" id="nTor">
+        <circle class="pulse" cx="280" cy="108" r="8"/>
+        <circle class="core" cx="280" cy="108" r="6.5"/>
+        <text class="city lbl" data-lbl="nTor" x="280" y="80" text-anchor="middle">Toronto</text>
+        <text class="sub lbl" data-lbl="nTor" x="280" y="140" text-anchor="middle">Canada, 2019 to today</text>
+      </g>
+    </svg>
+  </div>
+  <p class="jcap">Three cities. One direction: forward.</p>
 </section>
 
 <div class="road" id="road">
@@ -165,7 +223,32 @@
   document.querySelectorAll('.stats').forEach(el => statIO.observe(el));
 
   const hero = document.getElementById('heroImg'), blazer = document.getElementById('blazerImg'),
-        road = document.getElementById('road'), fill = document.getElementById('roadFill');
+        road = document.getElementById('road'), fill = document.getElementById('roadFill'),
+        jsec = document.getElementById('journeySec'),
+        arc1 = document.getElementById('arc1'), arc2 = document.getElementById('arc2'),
+        dot = document.getElementById('travelDot');
+  const L1 = arc1.getTotalLength(), L2 = arc2.getTotalLength();
+  arc1.style.strokeDasharray = L1; arc1.style.strokeDashoffset = L1;
+  arc2.style.strokeDasharray = L2; arc2.style.strokeDashoffset = L2;
+  const seg = (p, a, b) => Math.min(Math.max((p - a) / (b - a), 0), 1);
+  function setNode(id, on) {
+    document.getElementById(id).classList.toggle('on', on);
+    document.querySelectorAll('[data-lbl="' + id + '"]').forEach(t => t.classList.toggle('on', on));
+  }
+  function journey() {
+    const r = jsec.getBoundingClientRect(), vh = innerHeight;
+    const p = Math.min(Math.max((vh * 0.80 - r.top) / (vh * 0.75), 0), 1);
+    setNode('nDam', p > 0.02);
+    arc1.style.strokeDashoffset = L1 * (1 - seg(p, 0.05, 0.30));
+    setNode('nKho', p > 0.30);
+    const q = seg(p, 0.32, 0.92);
+    arc2.style.strokeDashoffset = L2 * (1 - q);
+    if (q > 0 && q < 1) {
+      const pt = arc2.getPointAtLength(L2 * q);
+      dot.setAttribute('cx', pt.x); dot.setAttribute('cy', pt.y); dot.setAttribute('opacity', 1);
+    } else dot.setAttribute('opacity', q >= 1 ? 0 : 0);
+    setNode('nTor', p > 0.92);
+  }
   addEventListener('scroll', () => {
     const y = scrollY;
     hero.style.transform = 'scale(' + Math.max(1.14 - y * 0.00025, 1.0) + ')';
@@ -175,7 +258,9 @@
     const rr = road.getBoundingClientRect();
     const rp = Math.min(Math.max((-rr.top + vh * 0.5) / rr.height, 0), 1);
     fill.style.height = (rp * 100) + '%';
+    journey();
   }, { passive: true });
+  journey();
 </script>
 </body>
 </html>
