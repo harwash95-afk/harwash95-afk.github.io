@@ -39,6 +39,8 @@
   .divider { width: 64px; height: 2px; margin: 0 auto; background: linear-gradient(90deg, #ff3b30, #bf5af2); border: none; }
   .photoframe { width: min(460px, 88vw); margin: 46px auto 0; border-radius: 26px; overflow: hidden; }
   .photoframe img { width: 100%; display: block; transform: scale(1.16); will-change: transform; }
+  .thumbframe { width: min(360px, 84vw); margin: 40px auto 8px; border-radius: 26px; overflow: hidden; }
+  .thumbframe img { width: 100%; height: 300px; object-fit: cover; display: block; }
   .road { position: relative; }
   .roadline { position: absolute; left: 50%; top: 0; width: 2px; height: 100%; background: rgba(255,255,255,0.10); transform: translateX(-50%); }
   .roadfill { width: 100%; height: 0%; background: linear-gradient(180deg, #ff3b30, #bf5af2); }
@@ -164,13 +166,12 @@
 </section>
 
 <div class="road" id="road">
-  <div class="roadline"><div class="roadfill" id="roadFill"></div></div>
 
   <section class="rv left">
     <h2>It Started With Helping People</h2>
     <p>He studied economics at Damascus University. Then the Syrian revolution began, and families around him lost everything overnight.</p>
-    <p>He did not wait for an organization or a plan. <strong>He started himself.</strong> He found houses for families who had nowhere to sleep, and he put food and medicine in their hands, funded by private people who trusted one thing: if Houssam said he would deliver it, he would.</p>
-    <p>That is still who he is. Helping people stand back up is the work under all his other work, and it drives his commitment to humanitarian efforts wherever in the world they are needed.</p>
+    <p>He did not wait for an organization or a plan. <strong>He started himself.</strong> He found houses for families who had nowhere to sleep, and he put food and medicine in their hands, funded by private people who trusted him to get it there.</p>
+    <p>Helping people is not something he did once. It is who he is, then and now, and it still drives his humanitarian work wherever in the world it is needed.</p>
   </section>
 
   <section class="rv right">
@@ -183,18 +184,17 @@
   <section class="rv left">
     <h2>Canada, Built on Credentials</h2>
     <p>Advanced Diploma in Business Administration from Sheridan College, High Honour Graduate with a 3.93 GPA, and a first place finish in a strategic business simulation ranked in the Global Top 50.</p>
-    <p>PMP®. Chartered Marketer. Licensed Ontario realtor. And in 2019, co-founder of Harwash Inc in Toronto with his brother Osama, a business rated 4.9 stars across more than 900 Google reviews, where he leads operations, marketing, and business development.</p>
-    <div class="photoframe"><img id="blazerImg" src="blazer-dark.jpg" alt="Houssam Harwash in Toronto"></div>
+    <p>PMP®. Chartered Marketer. Licensed Ontario realtor. And in 2019, co-founder of Harwash Inc in Toronto, where he leads operations, marketing, and business development.</p>
+    <div class="photoframe"><img id="blazerImg" src="blazer-bw.jpg" alt="Houssam Harwash in Toronto"></div>
   </section>
 </div>
 
 <section class="rv up">
   <h2>The Record</h2>
   <div class="stats">
-    <div class="stat"><div class="top"><span class="label">Years in Saudi oil and gas</span><span class="num" data-count="5">0</span></div><div class="bar"><i data-w="72"></i></div></div>
+    <div class="stat"><div class="top"><span class="label">Years of professional experience</span><span class="num" data-count="13" data-suffix="+">0</span></div><div class="bar"><i data-w="95"></i></div></div>
+    <div class="stat"><div class="top"><span class="label">Years in Saudi oil and gas</span><span class="num" data-count="5">0</span></div><div class="bar"><i data-w="55"></i></div></div>
     <div class="stat"><div class="top"><span class="label">Sheridan College GPA</span><span class="num" data-count="3.93" data-dec="2">0</span></div><div class="bar"><i data-w="98"></i></div></div>
-    <div class="stat"><div class="top"><span class="label">Google rating, Harwash Inc</span><span class="num" data-count="4.9" data-dec="1">0</span></div><div class="bar"><i data-w="98"></i></div></div>
-    <div class="stat"><div class="top"><span class="label">Google reviews</span><span class="num" data-count="900" data-suffix="+">0</span></div><div class="bar"><i data-w="90"></i></div></div>
     <div class="stat"><div class="top"><span class="label">Countries worked in</span><span class="num" data-count="3">0</span></div><div class="bar"><i data-w="60"></i></div></div>
   </div>
 </section>
@@ -216,6 +216,7 @@
 
 <section class="rv up">
   <h2>Research Work</h2>
+  <div class="thumbframe"><img src="library-bw.jpg" alt="Houssam Harwash reading in the library"></div>
   <p>His Sheridan portfolio includes an original TikTok usage study with survey research and Looker Studio dashboards, brand and campaign case analyses (Syncapse, Shaw Media, Anheuser-Busch, Uber vs Taxi), a full marketing plan, a B2B digital marketing campaign, and agency pitch work.</p>
   <p><a href="https://drive.google.com/drive/folders/13Qb-6L6ilye2OXwsmFaCPuDExT5mIRgX">View the research portfolio</a></p>
 </section>
@@ -246,7 +247,6 @@
   document.querySelectorAll('.stats').forEach(el => statIO.observe(el));
 
   const hero = document.getElementById('heroImg'), blazer = document.getElementById('blazerImg'),
-        road = document.getElementById('road'), fill = document.getElementById('roadFill'),
         jsec = document.getElementById('journeySec'),
         arc1 = document.getElementById('arc1'), arc2 = document.getElementById('arc2'),
         dot = document.getElementById('travelDot');
@@ -278,9 +278,6 @@
     const r = blazer.getBoundingClientRect(), vh = innerHeight;
     const p = Math.min(Math.max((vh - r.top) / (vh + r.height), 0), 1);
     blazer.style.transform = 'scale(' + (1.16 - p * 0.16) + ')';
-    const rr = road.getBoundingClientRect();
-    const rp = Math.min(Math.max((-rr.top + vh * 0.5) / rr.height, 0), 1);
-    fill.style.height = (rp * 100) + '%';
     journey();
   }, { passive: true });
   journey();
