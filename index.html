@@ -86,6 +86,9 @@
   .artcard h3 { font-size: clamp(1.5rem, 4vw, 2.2rem); font-weight: 700; line-height: 1.25; margin: 38px auto 16px; max-width: 720px; }
   .artcard p { margin-bottom: 18px; }
   .artmeta { font-size: 0.95rem; color: #86868b; letter-spacing: 0.14em; text-transform: uppercase; }
+  .topnav { position: fixed; top: 0; left: 0; right: 0; z-index: 60; display: flex; justify-content: flex-end; align-items: center; gap: 26px; padding: 15px 26px; background: rgba(0,0,0,0.72); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .topnav a { font-size: 13.5px; color: #d6d6da; }
+  .topnav a.strong { color: #fff; font-weight: 600; }
   a { color: #e8e8ed; text-decoration: none; }
   a:hover { text-decoration: underline; }
   footer { padding: 70px 24px 90px; color: #86868b; font-size: 0.95rem; }
@@ -97,6 +100,12 @@
 </style>
 </head>
 <body>
+
+<nav class="topnav">
+  <a href="#journeySec">Journey</a>
+  <a href="#articles" class="strong">Articles</a>
+  <a href="mailto:harwash95@gmail.com">Contact</a>
+</nav>
 
 <section class="hero">
   <div class="frame"><img id="heroImg" src="headshot-bw.jpg" alt="Houssam Harwash"></div>
@@ -239,7 +248,7 @@
   <p><a href="https://drive.google.com/drive/folders/13Qb-6L6ilye2OXwsmFaCPuDExT5mIRgX">View the research portfolio</a></p>
 </section>
 
-<section class="rv up">
+<section class="rv up" id="articles">
   <h2>Articles</h2>
   <p>Stories from real project work and the new methods changing it. A problem, a deployment, a mess, a fix.</p>
   <div class="scene" role="img" aria-label="Sketch of an AI agent crew: Scout, Scribe and Watchdog feeding a Coordinator, which assembles the Friday pack for human approval">
